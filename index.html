@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: your name shows in the browser tab -->
+  <title>[Rujul Telavane] | Portfolio</title>
+  <meta name="description" content="[Your Name]: [Major] student at NJIT. Projects, experience, and contact info.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* EDIT (optional): change --accent to any color you like, e.g. #6C63FF or #2A9D8F */
+    :root {
+      --accent: #D6457A;
+      --accent-soft: #FBE4EC;
+      --bg: #FCFAFB;
+      --card: #FFFFFF;
+      --text: #1F1B24;
+      --muted: #6B6475;
+      --border: #ECE6EE;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Inter", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+    nav { position: sticky; top: 0; background: rgba(252,250,251,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); z-index: 10; }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+    nav .logo { font-weight: 700; color: var(--text); }
+    nav ul { display: flex; gap: 22px; list-style: none; }
+    nav ul a { color: var(--muted); font-size: 0.95rem; font-weight: 500; }
+
+    header.wrap { padding: 96px 24px 72px; }
+    .hello { color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+    h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.1; letter-spacing: -0.02em; }
+    .tagline { font-size: 1.25rem; color: var(--muted); margin: 16px 0 32px; max-width: 600px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-block; padding: 11px 22px; border-radius: 999px; font-weight: 600; border: 2px solid var(--accent); }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn.secondary { color: var(--accent); background: transparent; }
+    .btn:hover { text-decoration: none; opacity: 0.88; }
+
+    section { padding: 56px 0; border-top: 1px solid var(--border); }
+    h2 { font-size: 1.6rem; margin-bottom: 24px; letter-spacing: -0.01em; }
+    .about { display: flex; gap: 32px; align-items: flex-start; }
+    .about img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .about p + p { margin-top: 12px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; }
+    .card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 0.95rem; flex-grow: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+    .tag { background: var(--accent-soft); color: var(--accent); font-size: 0.8rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+    .card .links { display: flex; gap: 16px; font-weight: 600; font-size: 0.95rem; }
+
+    .job { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding: 18px 0; }
+    .job + .job { border-top: 1px dashed var(--border); }
+    .job .when { color: var(--muted); font-size: 0.95rem; }
+    .job h3 { font-size: 1.05rem; }
+    .job .org { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-bottom: 6px; }
+    .job ul { padding-left: 18px; color: var(--muted); }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skills span { background: var(--card); border: 1px solid var(--border); padding: 8px 16px; border-radius: 999px; font-weight: 500; }
+
+    .contact p { color: var(--muted); margin-bottom: 20px; max-width: 560px; }
+    footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.9rem; text-align: center; }
+
+    @media (max-width: 640px) {
+      nav ul { gap: 14px; }
+      nav ul li.hide-sm { display: none; }
+      header.wrap { padding: 64px 24px 48px; }
+      .about { flex-direction: column; }
+      .job { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <!-- EDIT: your initials or first name -->
+      <a class="logo" href="#">[Rujul Telavane]</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li class="hide-sm"><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== EDIT: HERO ===== -->
+  <header class="wrap">
+    <p class="hello">Hi, my name is</p>
+    <h1>[Rujul Telavane]</h1>
+    <p class="tagline">[Computer Science student at NJIT who loves building web apps that make campus life easier.]</p>
+    <div class="buttons">
+      <!-- Upload your resume to this repo as resume.pdf and this button works -->
+      <a class="btn primary" href="resume.pdf" target="_blank">Resume</a>
+      <a class="btn secondary" href="https://github.com/rujultelavane" target="_blank">GitHub</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/rujul-telavane/" target="_blank">LinkedIn</a>
+    </div>
+  </header>
+
+  <!-- ===== EDIT: ABOUT ===== -->
+  <section id="about">
+    <div class="wrap">
+      <h2>About me</h2>
+      <div class="about">
+        <!-- Optional photo: upload photo.jpg to this repo, then delete the two comment markers around the next line -->
+        <!-- <img src="photo.jpg" alt="Photo of [Your Name]"> -->
+        <div>
+          <p>[I'm a sophomore at NJIT studying Computer Science, I'm interested in Cybersecurity and AI/ML.]</p>
+          <p>[Outside of class, I'm involved in WiCS, Delta Phi Epsilon Sorority, and Onyx Dance Crew. Right now I'm looking for SWE and other tech internships for Summer 2027.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: PROJECTS (copy a whole <div class="card"> block to add another) ===== -->
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="grid">
+
+        <div class="card">
+          <h3>[Project One]</h3>
+          <p>[One or two sentences: what it does, who it's for, and one result, e.g. "used by 40 students".]</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+          <div class="links">
+            <a href="https://github.com/rujultelavane/project-one" target="_blank">Code</a>
+            <a href="https://project-one.vercel.app" target="_blank">Live demo</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>[Project Two]</h3>
+          <p>[What you built and what you learned building it.]</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span></div>
+          <div class="links">
+            <a href="https://github.com/rujultelavane/project-two" target="_blank">Code</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>[Project Three]</h3>
+          <p>[A class project, hackathon build (GirlHacks counts!), or something you made for fun.]</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <div class="links">
+            <a href="https://github.com/rujultelavane/project-three" target="_blank">Code</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: EXPERIENCE (copy a whole <div class="job"> block to add another, or delete this section) ===== -->
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="when">[Jun 2026 to Aug 2026]</div>
+        <div>
+          <h3>[Software Engineering Intern]</h3>
+          <div class="org">[Company Name]</div>
+          <ul>
+            <li>[What you built or improved, with a number if you have one]</li>
+            <li>[A tool, skill, or team you worked with]</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">[Sep 2025 to Present]</div>
+        <div>
+          <h3>[Role, e.g. Member / Tutor / Research Assistant]</h3>
+          <div class="org">[Club, Lab, or Organization]</div>
+          <ul>
+            <li>[What you do there]</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== EDIT: SKILLS ===== -->
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>Python</span><span>Java</span><span>JavaScript</span><span>React</span><span>SQL</span><span>Git &amp; GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: CONTACT ===== -->
+  <section id="contact">
+    <div class="wrap contact">
+      <h2>Get in touch</h2>
+      <p>[I'm currently looking for Summer 2027 internships. The best way to reach me is email.]</p>
+      <div class="buttons">
+        <a class="btn primary" href="mailto:rstelavane@gmail.com">Email me</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/rujul-telavane/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <!-- EDIT: your name -->
+    <p>&copy; 2026 [Your Name] &middot; Built at a WiCS workshop and hosted on GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
